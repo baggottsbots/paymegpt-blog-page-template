@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://baggottsbots.github.io/paymegpt-blog-page-template/sitemap.xml
+Sitemap: https://blog.paymegpt.com/sitemap.xml
