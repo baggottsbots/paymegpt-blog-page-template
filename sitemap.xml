@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://baggottsbots.github.io/paymegpt-blog-page-template/</loc>
-    <lastmod>2026-07-29T19:25:32.323Z</lastmod>
+    <loc>https://blog.paymegpt.com/</loc>
+    <lastmod>2026-07-29T19:27:49.541Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://baggottsbots.github.io/paymegpt-blog-page-template/article/</loc>
+    <loc>https://blog.paymegpt.com/article/</loc>
     <lastmod>2026-07-29T19:21:41.950Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
