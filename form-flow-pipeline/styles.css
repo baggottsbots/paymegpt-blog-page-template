@@ -71,9 +71,20 @@
   .download-link{display:none;margin-top:6px}
   .download-link.show{display:inline-flex}
 
-  .author{display:flex;gap:18px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-top:20px}
+  .author{display:flex;gap:18px;align-items:flex-start;border-top:1px solid var(--border);padding:30px 0 6px;margin-top:34px}
   .author .av{width:56px;height:56px}
+  .author-label{display:block;font-family:'Poppins';font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.85;margin-bottom:6px}
   .author h4{font-family:'Poppins';font-weight:700;font-size:1.05rem;margin-bottom:4px}
-  .author p{color:var(--muted);font-size:.95rem;margin:0}
+  .author p{color:var(--muted);font-size:.95rem;margin:0;max-width:56ch}
 
   footer{border-top:1px solid var(--border);margin-top:30px;padding:40px 0 30px;text-align:center;color:var(--muted);font-size:.88rem}
+
+  @media (max-width:640px){
+    .read{padding:0 30px}
+    .article-head{padding:40px 0 26px}
+    .article-head h1{font-size:clamp(1.75rem,7.4vw,2.35rem);max-width:100%}
+    .article-head .lede{font-size:1.04rem;max-width:100%}
+    .offer{padding:32px 24px;border-radius:18px}
+    .author{gap:14px;padding-top:26px}
+    .author .av{width:48px;height:48px}
+  }
