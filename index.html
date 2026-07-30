@@ -410,6 +410,12 @@
         <p>Product updates and practical guides on building AI agents. More articles are on the way. No spam, unsubscribe anytime.</p>
         <form class="form" id="newsletterForm">
           <input type="email" id="newsletterEmail" placeholder="you@company.com" required />
+          <input type="tel" id="newsletterPhone" placeholder="Phone (optional)" />
+          <select id="newsletterExisting" required>
+            <option value="" disabled selected>Are you an existing PayMeGPT customer?</option>
+            <option value="Yes">Yes, I'm a customer</option>
+            <option value="No">No, not yet</option>
+          </select>
           <button class="btn btn-primary" type="submit" id="newsletterBtn">Subscribe</button>
         </form>
         <div class="form-msg" id="newsletterMsg"></div>
@@ -451,6 +457,8 @@
 
   var newsletterForm = document.getElementById('newsletterForm');
   var newsletterEmail = document.getElementById('newsletterEmail');
+  var newsletterPhone = document.getElementById('newsletterPhone');
+  var newsletterExisting = document.getElementById('newsletterExisting');
   var newsletterBtn = document.getElementById('newsletterBtn');
   var newsletterMsg = document.getElementById('newsletterMsg');
   var WEBHOOK_URL = 'https://paymegpt.com/api/webhooks/flow/4618/6be9d15d7437cd21722c3dc5825343153724a5138c79fa316afa048619d9ed2b';
@@ -458,24 +466,31 @@
   newsletterForm.addEventListener('submit', function(e){
     e.preventDefault();
     var email = newsletterEmail.value.trim();
-    if(!email){ return; }
+    var phone = newsletterPhone.value.trim();
+    var existing = newsletterExisting.value;
+    if(!email || !existing){ return; }
     newsletterBtn.disabled = true;
     newsletterBtn.textContent = 'Subscribing...';
     newsletterMsg.textContent = '';
     newsletterMsg.className = 'form-msg';
 
+    var payload = {
+      contactEmail: email,
+      data: { source: 'blog.paymegpt.com', existingCustomer: existing }
+    };
+    if(phone){ payload.contactPhone = phone; }
+
     fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contactEmail: email,
-        data: { source: 'blog.paymegpt.com' }
-      })
+      body: JSON.stringify(payload)
     }).then(function(res){
       if(!res.ok){ throw new Error('bad status'); }
       newsletterMsg.textContent = "You're in! Check your inbox for future updates.";
       newsletterMsg.className = 'form-msg ok';
       newsletterEmail.value = '';
+      newsletterPhone.value = '';
+      newsletterExisting.value = '';
     }).catch(function(){
       newsletterMsg.textContent = 'Something went wrong. Please try again.';
       newsletterMsg.className = 'form-msg err';
