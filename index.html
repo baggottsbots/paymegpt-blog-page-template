@@ -409,6 +409,7 @@
         <h2>Get new posts in your inbox</h2>
         <p>Product updates and practical guides on building AI agents. More articles are on the way. No spam, unsubscribe anytime.</p>
         <form class="form" id="newsletterForm">
+          <input type="text" id="newsletterName" placeholder="Full name" required />
           <input type="email" id="newsletterEmail" placeholder="you@company.com" required />
           <input type="tel" id="newsletterPhone" placeholder="Phone (optional)" />
           <select id="newsletterExisting" required>
@@ -456,6 +457,7 @@
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
 
   var newsletterForm = document.getElementById('newsletterForm');
+  var newsletterName = document.getElementById('newsletterName');
   var newsletterEmail = document.getElementById('newsletterEmail');
   var newsletterPhone = document.getElementById('newsletterPhone');
   var newsletterExisting = document.getElementById('newsletterExisting');
@@ -465,16 +467,18 @@
 
   newsletterForm.addEventListener('submit', function(e){
     e.preventDefault();
+    var name = newsletterName.value.trim();
     var email = newsletterEmail.value.trim();
     var phone = newsletterPhone.value.trim();
     var existing = newsletterExisting.value;
-    if(!email || !existing){ return; }
+    if(!name || !email || !existing){ return; }
     newsletterBtn.disabled = true;
     newsletterBtn.textContent = 'Subscribing...';
     newsletterMsg.textContent = '';
     newsletterMsg.className = 'form-msg';
 
     var payload = {
+      contactName: name,
       contactEmail: email,
       data: { source: 'blog.paymegpt.com', existingCustomer: existing }
     };
@@ -488,6 +492,7 @@
       if(!res.ok){ throw new Error('bad status'); }
       newsletterMsg.textContent = "You're in! Check your inbox for future updates.";
       newsletterMsg.className = 'form-msg ok';
+      newsletterName.value = '';
       newsletterEmail.value = '';
       newsletterPhone.value = '';
       newsletterExisting.value = '';
