@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.paymegpt.com/</loc>
+    <lastmod>2026-07-30T15:43:19.238Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://blog.paymegpt.com/form-flow-pipeline/</loc>
-    <lastmod>2026-07-30T15:24:56.352Z</lastmod>
+    <lastmod>2026-07-30T15:43:11.242Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://blog.paymegpt.com/single-prompt-to-revenue-agent/</loc>
-    <lastmod>2026-07-30T14:25:09.626Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://blog.paymegpt.com/</loc>
-    <lastmod>2026-07-30T14:24:57.786Z</lastmod>
+    <lastmod>2026-07-30T15:40:31.167Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
