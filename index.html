@@ -408,10 +408,11 @@
         <span class="eyebrow">Stay in the loop</span>
         <h2>Get new posts in your inbox</h2>
         <p>Product updates and practical guides on building AI agents. More articles are on the way. No spam, unsubscribe anytime.</p>
-        <form class="form" onsubmit="return false">
-          <input type="email" placeholder="you@company.com" />
-          <button class="btn btn-primary">Subscribe</button>
+        <form class="form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="you@company.com" required />
+          <button class="btn btn-primary" type="submit" id="newsletterBtn">Subscribe</button>
         </form>
+        <div class="form-msg" id="newsletterMsg"></div>
       </div>
     </section>
   </div>
@@ -443,7 +444,46 @@
   </div>
 </footer>
 
+<script>
+  var ham=document.getElementById('ham'),menu=document.getElementById('mobileMenu');
+  ham.addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
 
-  <script src="script.js"></script>
+  var newsletterForm = document.getElementById('newsletterForm');
+  var newsletterEmail = document.getElementById('newsletterEmail');
+  var newsletterBtn = document.getElementById('newsletterBtn');
+  var newsletterMsg = document.getElementById('newsletterMsg');
+  var WEBHOOK_URL = 'https://paymegpt.com/api/webhooks/flow/4618/6be9d15d7437cd21722c3dc5825343153724a5138c79fa316afa048619d9ed2b';
+
+  newsletterForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = newsletterEmail.value.trim();
+    if(!email){ return; }
+    newsletterBtn.disabled = true;
+    newsletterBtn.textContent = 'Subscribing...';
+    newsletterMsg.textContent = '';
+    newsletterMsg.className = 'form-msg';
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contactEmail: email,
+        data: { source: 'blog.paymegpt.com' }
+      })
+    }).then(function(res){
+      if(!res.ok){ throw new Error('bad status'); }
+      newsletterMsg.textContent = "You're in! Check your inbox for future updates.";
+      newsletterMsg.className = 'form-msg ok';
+      newsletterEmail.value = '';
+    }).catch(function(){
+      newsletterMsg.textContent = 'Something went wrong. Please try again.';
+      newsletterMsg.className = 'form-msg err';
+    }).finally(function(){
+      newsletterBtn.disabled = false;
+      newsletterBtn.textContent = 'Subscribe';
+    });
+  });
+</script>
 </body>
 </html>
