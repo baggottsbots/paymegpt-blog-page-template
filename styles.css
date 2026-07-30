@@ -62,9 +62,12 @@
   .cta{margin:30px 0;background:linear-gradient(140deg,rgba(45,212,191,.12),rgba(59,130,246,.08));border:1px solid var(--border);border-radius:22px;padding:48px;text-align:center}
   .cta h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800}
   .cta p{color:var(--muted);margin:12px auto 26px;max-width:48ch}
-  .form{display:flex;gap:12px;max-width:460px;margin:0 auto}
-  .form input{flex:1;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:11px;padding:13px 16px;color:var(--text);font-size:.95rem;font-family:inherit}
-  .form input:focus{outline:none;border-color:var(--accent)}
+  .form{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
+  .form input, .form select{background:var(--surface-2);border:1px solid var(--border-strong);border-radius:11px;padding:13px 16px;color:var(--text);font-size:.95rem;font-family:inherit;width:100%}
+  .form select{appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2398a2b3" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');background-repeat:no-repeat;background-position:right 14px center;background-size:16px}
+  .form select:invalid{color:var(--muted)}
+  .form input:focus, .form select:focus{outline:none;border-color:var(--accent)}
+  .form-label{text-align:left;font-size:.82rem;color:var(--muted);margin-bottom:-4px}
   .form-msg{margin-top:14px;font-size:.9rem;min-height:1.2em}
   .form-msg.ok{color:var(--accent)}
   .form-msg.err{color:#f87171}
@@ -92,6 +95,5 @@
   }
   @media(max-width:560px){
     .foot{grid-template-columns:1fr}
-    .form{flex-direction:column}
     .featured .body,.cta{padding:28px}
   }
