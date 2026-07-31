@@ -345,14 +345,9 @@
       <span>PayMeGPT</span>
     </a>
     <nav class="nav-links">
+      <a href="https://shop.paymegpt.com/">Shop</a>
       <a href="https://paymegpt.com/auth" class="accent" style="font-weight:600">Login</a>
     </nav>
-    <button class="hamburger" id="ham" aria-label="Open menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-    </button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="https://paymegpt.com/auth" class="accent">Login</a>
   </div>
 </header>
 
@@ -362,7 +357,7 @@
     <br />
     <span class="tag">Guides</span>
     <h1>Form to Flow to Pipeline: wire a custom landing page straight into automation</h1>
-    <p class="lede">How a hand-coded form on a custom landing page can trigger a flow that logs, tags, alerts, and moves a contact into a pipeline — with zero manual work and zero third-party tools.</p>
+    <p class="lede">How a hand-coded form on a custom landing page can trigger a flow that logs, tags, alerts, and moves a contact into a pipeline &mdash; with zero manual work and zero third-party tools.</p>
     <div class="byline">
       <span class="av"></span>
       <span style="color:var(--text);font-weight:600">Ryan Baggott</span><span class="dot"></span>
@@ -374,18 +369,18 @@
 
   <article>
     <div class="read">
-      <p>Every automated system starts the same way: something happens, and something else needs to know about it. On PayMeGPT, that "something happens" is almost always a form submission — and the fastest, most reliable way to react to it is a native inbound webhook feeding straight into a flow.</p>
+      <p>Every automated system starts the same way: something happens, and something else needs to know about it. On PayMeGPT, that "something happens" is almost always a form submission &mdash; and the fastest, most reliable way to react to it is a native inbound webhook feeding straight into a flow.</p>
 
       <p>This is the exact pattern behind the newsletter signup box on this blog. One form, one webhook, one flow, four automatic steps. Here's how it works, end to end.</p>
 
       <h2>1. Start with a custom-coded landing page</h2>
-      <p>Not a page built with a drag-and-drop form widget — a real, hand-coded landing page with its own HTML, CSS, and JavaScript, optionally deployed to a custom domain through GitHub Pages. This matters because it means the form itself is entirely yours: any field, any validation, any design, with no platform lock-in.</p>
+      <p>Not a page built with a drag-and-drop form widget &mdash; a real, hand-coded landing page with its own HTML, CSS, and JavaScript, optionally deployed to a custom domain through GitHub Pages. This matters because it means the form itself is entirely yours: any field, any validation, any design, with no platform lock-in.</p>
 
       <h2>2. Build a custom-coded form, not a native form widget</h2>
-      <p>The form on the page is also hand-coded — a plain HTML form with a JavaScript submit handler. It isn't PayMeGPT's built-in form builder. Its only job is to collect the fields you want (name, email, phone, whatever else) and POST them somewhere the moment someone hits submit.</p>
+      <p>The form on the page is also hand-coded &mdash; a plain HTML form with a JavaScript submit handler. It isn't PayMeGPT's built-in form builder. Its only job is to collect the fields you want (name, email, phone, whatever else) and POST them somewhere the moment someone hits submit.</p>
 
       <h2>3. That "somewhere" is a native inbound webhook</h2>
-      <p>Every flow on PayMeGPT can expose a webhook URL. The form's JavaScript sends a simple JSON payload straight to that URL — no Zapier, no Make.com, no middleman:</p>
+      <p>Every flow on PayMeGPT can expose a webhook URL. The form's JavaScript sends a simple JSON payload straight to that URL &mdash; no Zapier, no Make.com, no middleman:</p>
       <pre style="background:#0b1220;border:1px solid var(--border);border-radius:12px;padding:20px;overflow:auto;font-size:.88rem;line-height:1.6;color:#cdd4df;margin:0 0 24px"><code>{
   "contactName": "...",
   "contactEmail": "...",
@@ -396,24 +391,24 @@
 
       <h2>4. The flow runs four steps, in order</h2>
       <ol>
-        <li><strong>Sheet</strong> — the submission gets appended as a new row in a Google Sheet, so there's always a running, exportable record.</li>
-        <li><strong>Tag</strong> — the contact is tagged, so you can filter, segment, or broadcast to everyone who came through this exact form later.</li>
-        <li><strong>Add to Stage</strong> — the contact drops into the first stage of a pipeline, ready to move through nurturing, qualification, or whatever stages make sense for that funnel.</li>
-        <li><strong>SMS</strong> — you get a text the moment it happens, with the contact's details spelled out clearly.</li>
+        <li><strong>Sheet</strong> &mdash; the submission gets appended as a new row in a Google Sheet, so there's always a running, exportable record.</li>
+        <li><strong>Tag</strong> &mdash; the contact is tagged, so you can filter, segment, or broadcast to everyone who came through this exact form later.</li>
+        <li><strong>Add to Stage</strong> &mdash; the contact drops into the first stage of a pipeline, ready to move through nurturing, qualification, or whatever stages make sense for that funnel.</li>
+        <li><strong>SMS</strong> &mdash; you get a text the moment it happens, with the contact's details spelled out clearly.</li>
       </ol>
 
       <blockquote>One webhook hit. Four systems updated. Zero manual work.</blockquote>
 
       <div class="callout">
         <h3>&#128736; Order matters</h3>
-        <p style="margin:0">Log the data before reacting to it. Sheet first, then tag, then pipeline placement, then the alert — that way even if a later step fails for any reason, the record already exists.</p>
+        <p style="margin:0">Log the data before reacting to it. Sheet first, then tag, then pipeline placement, then the alert &mdash; that way even if a later step fails for any reason, the record already exists.</p>
       </div>
 
       <h2>Why this beats a typical form tool</h2>
-      <p>Most form builders stop at "send me an email." This pattern gives every submission a permanent record, a searchable tag, a place in a real sales or nurture pipeline, and an instant alert — all from one page you fully control, with no per-submission fees and no platform lock-in.</p>
+      <p>Most form builders stop at "send me an email." This pattern gives every submission a permanent record, a searchable tag, a place in a real sales or nurture pipeline, and an instant alert &mdash; all from one page you fully control, with no per-submission fees and no platform lock-in.</p>
 
       <hr class="divider" />
-      <p>That's the whole pattern: a custom-coded page, a custom-coded form, one native webhook, and a flow that does the rest. Same shape works for a newsletter box, a demo request, a contact form, or a lead magnet — like the one below.</p>
+      <p>That's the whole pattern: a custom-coded page, a custom-coded form, one native webhook, and a flow that does the rest. Same shape works for a newsletter box, a demo request, a contact form, or a lead magnet &mdash; like the one below.</p>
     </div>
   </article>
 
@@ -422,7 +417,7 @@
     <div class="offer">
       <span class="eyebrow">Free download</span>
       <h2>Get the exact skill file we used to build this</h2>
-      <p>Drop your info below and we'll unlock the download — a step-by-step SKILL.md covering the full Form → Flow → Pipeline build, node schema included.</p>
+      <p>Drop your info below and we'll unlock the download &mdash; a step-by-step SKILL.md covering the full Form to Flow to Pipeline build, node schema included.</p>
       <form class="form" id="skillForm">
         <input type="text" id="skillName" placeholder="Full name" required />
         <input type="email" id="skillEmail" placeholder="you@company.com" required />
@@ -453,9 +448,6 @@
 </footer>
 
 <script>
-  var ham=document.getElementById('ham'),menu=document.getElementById('mobileMenu');
-  ham.addEventListener('click',function(){menu.classList.toggle('open');});
-
   var skillForm = document.getElementById('skillForm');
   var skillName = document.getElementById('skillName');
   var skillEmail = document.getElementById('skillEmail');
