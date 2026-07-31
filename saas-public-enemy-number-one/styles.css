@@ -23,8 +23,8 @@
   header{position:sticky;top:0;z-index:50;background:rgba(10,14,23,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:700;font-size:1.22rem}
-  .nav-links{display:flex;align-items:center;gap:30px}
-  .nav-links a{color:var(--muted);font-weight:500;font-size:.95rem}
+  .nav-links{display:flex;align-items:center;gap:24px}
+  .nav-links a{color:var(--muted);font-weight:500;font-size:.95rem;transition:color .15s}
   .nav-links a:hover{color:var(--text)}
   .hamburger{display:none;background:transparent;border:1px solid var(--border-strong);border-radius:10px;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
   .hamburger svg{width:22px;height:22px;color:var(--text)}
@@ -93,4 +93,9 @@
     .btn-ghost{margin-left:0;margin-top:10px}
     .author{gap:14px;padding-top:26px}
     .author .av{width:48px;height:48px}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 16px}
+    .nav-links{gap:18px}
+    .brand{font-size:1.08rem}
   }
