@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.paymegpt.com/form-flow-pipeline/</loc>
+    <lastmod>2026-07-31T18:12:52.196Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://blog.paymegpt.com/</loc>
     <lastmod>2026-07-31T18:12:47.872Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -8,11 +13,6 @@
   <url>
     <loc>https://blog.paymegpt.com/saas-public-enemy-number-one/</loc>
     <lastmod>2026-07-31T18:11:53.503Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://blog.paymegpt.com/form-flow-pipeline/</loc>
-    <lastmod>2026-07-31T18:09:40.130Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
