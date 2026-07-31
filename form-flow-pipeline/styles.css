@@ -23,14 +23,9 @@
   header{position:sticky;top:0;z-index:50;background:rgba(10,14,23,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
   .brand{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:700;font-size:1.22rem}
-  .nav-links{display:flex;align-items:center;gap:30px}
-  .nav-links a{color:var(--muted);font-weight:500;font-size:.95rem}
+  .nav-links{display:flex;align-items:center;gap:24px}
+  .nav-links a{color:var(--muted);font-weight:500;font-size:.95rem;transition:color .15s}
   .nav-links a:hover{color:var(--text)}
-  .hamburger{display:none;background:transparent;border:1px solid var(--border-strong);border-radius:10px;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
-  .hamburger svg{width:22px;height:22px;color:var(--text)}
-  .mobile-menu{display:none;border-top:1px solid var(--border);background:var(--surface-2)}
-  .mobile-menu.open{display:block}
-  .mobile-menu a{display:block;padding:14px 24px;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border)}
 
   .article-head{padding:52px 24px 30px;text-align:center}
   .back{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:22px}
@@ -87,4 +82,9 @@
     .offer{padding:32px 24px;border-radius:18px}
     .author{gap:14px;padding-top:26px}
     .author .av{width:48px;height:48px}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 16px}
+    .nav-links{gap:18px}
+    .brand{font-size:1.08rem}
   }
