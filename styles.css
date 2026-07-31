@@ -36,6 +36,8 @@
   .hero p{color:var(--muted);font-size:1.12rem;max-width:56ch;margin:18px auto 0}
 
   section{padding:34px 0}
+  .post-wrap{position:relative;display:flex}
+  .post-wrap > a{flex:1;min-width:0}
   .featured{display:grid;grid-template-columns:1.05fr .95fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:22px;overflow:hidden}
   .featured .thumb{min-height:340px;background-image:url('https://paymegpt.com/objects/generated-images/2/1785368982039-f86b6d61a62506b1.png');background-size:cover;background-position:center}
   .featured .body{padding:40px}
@@ -55,6 +57,14 @@
   .card .body{padding:22px}
   .card h3{font-size:1.15rem;font-weight:700;margin:10px 0 8px}
   .card p{color:var(--muted);font-size:.94rem}
+
+  /* ===== SHARE ===== */
+  .share-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(10,14,23,.78);backdrop-filter:blur(8px);border:1px solid var(--border-strong);color:var(--text);cursor:pointer;transition:.15s;padding:0}
+  .share-btn:hover{color:var(--accent-ink);background:var(--accent);border-color:var(--accent)}
+  .share-btn svg{width:17px;height:17px}
+  .share-float{position:absolute;top:14px;right:14px;z-index:3}
+  .share-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(12px);background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:11px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:300}
+  .share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
   .cta{margin:30px 0;background:linear-gradient(140deg,rgba(45,212,191,.12),rgba(59,130,246,.08));border:1px solid var(--border);border-radius:22px;padding:48px;text-align:center}
   .cta h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800}
