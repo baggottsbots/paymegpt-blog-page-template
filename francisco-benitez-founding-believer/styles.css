@@ -52,6 +52,21 @@
   .tag{font-family:'Poppins';font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
   .divider{border:0;border-top:1px solid var(--border);margin:44px 0}
 
+  /* ===== SHARE ===== */
+  .share{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .share-label{font-family:'Poppins';font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+  .share-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;background:var(--surface);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:.15s;padding:0}
+  .share-btn:hover{color:var(--accent-ink);background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+  .share-btn svg{width:17px;height:17px}
+  .share-btn.hidden{display:none}
+  .share-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(12px);background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:11px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:300}
+  .share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ===== VIDEO EMBED ===== */
+  .video-figure{margin:38px 0}
+  .embed{position:relative;width:100%;padding-top:56.25%;border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#000}
+  .embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
   .msg{margin:26px 0;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 14px 14px 0;padding:18px 22px}
   .msg .who{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
   .msg .name{font-weight:700;color:var(--accent);font-size:.98rem}
