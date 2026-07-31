@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.paymegpt.com/francisco-benitez-founding-believer/</loc>
+    <lastmod>2026-07-31T18:31:58.807Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://blog.paymegpt.com/form-flow-pipeline/</loc>
     <lastmod>2026-07-31T18:31:54.876Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -8,11 +13,6 @@
   <url>
     <loc>https://blog.paymegpt.com/</loc>
     <lastmod>2026-07-31T18:31:50.885Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://blog.paymegpt.com/francisco-benitez-founding-believer/</loc>
-    <lastmod>2026-07-31T18:31:43.485Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
