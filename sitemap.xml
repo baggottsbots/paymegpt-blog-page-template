@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.paymegpt.com/single-prompt-to-revenue-agent/</loc>
+    <lastmod>2026-07-31T18:32:07.858Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://blog.paymegpt.com/saas-public-enemy-number-one/</loc>
     <lastmod>2026-07-31T18:32:03.764Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -18,11 +23,6 @@
   <url>
     <loc>https://blog.paymegpt.com/</loc>
     <lastmod>2026-07-31T18:31:50.885Z</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://blog.paymegpt.com/single-prompt-to-revenue-agent/</loc>
-    <lastmod>2026-07-31T18:31:36.359Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
