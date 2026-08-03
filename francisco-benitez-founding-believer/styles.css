@@ -36,7 +36,7 @@
   .byline span:not(.av):not(.dot){white-space:nowrap}
   .av{width:40px;height:40px;border-radius:50%;background-image:url('https://paymegpt.com/objects/quick-uploads/2/6a02a4d570348ea0.jpg');background-size:cover;background-position:center;flex:0 0 auto}
   .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.6;flex:0 0 auto}
-  .cover{max-width:960px;margin:34px auto 0;height:min(46vw,420px);border-radius:22px;border:1px solid var(--border);background-image:url('https://paymegpt.com/objects/quick-uploads/2/139e034a7fff567c.jpg');background-size:cover;background-position:center}
+  .cover{max-width:960px;margin:34px auto 0;height:min(46vw,420px);border-radius:22px;border:1px solid var(--border);background-image:url('https://paymegpt.com/objects/quick-uploads/2/d7058bf7cb372daf.jpg');background-size:cover;background-position:center}
 
   article{padding:44px 0 20px}
   article p{color:#cdd4df;font-size:1.09rem;margin:0 0 24px}
