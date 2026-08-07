@@ -39,7 +39,7 @@
   .post-wrap{position:relative;display:flex}
   .post-wrap > a{flex:1;min-width:0}
   .featured{display:grid;grid-template-columns:1.05fr .95fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:22px;overflow:hidden}
-  .featured .thumb{min-height:340px;background-image:url('https://paymegpt.com/objects/quick-uploads/2/34bf8dc01b14b7a9.png');background-size:cover;background-position:center}
+  .featured .thumb{min-height:340px;background-size:cover;background-position:center}
   .featured .body{padding:40px}
   .featured h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;margin:14px 0 12px}
   .featured p{color:var(--muted);font-size:1.02rem}
