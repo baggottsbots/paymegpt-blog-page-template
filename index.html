@@ -85,14 +85,18 @@
 <script data-lp-token-hydrate>
 (function(){try{
   var slug="paymegpt-blog-template";
+  var SITEK="";
   var SK='lp_access_'+slug;
   var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
   var u=new URL(location.href);var found=null;var changed=false;
-  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{localStorage.setItem(map[p]+slug,v);}catch(e){}u.searchParams.delete(p);changed=true;}});
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}u.searchParams.delete(p);changed=true;}});
   if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
-  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
   if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
-  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);}catch(e){return null;}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
   function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
   if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
   if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
@@ -418,6 +422,22 @@
         <h2>Recent posts</h2>
       </div>
       <div class="grid">
+        <div class="post-wrap">
+          <a href="https://blog.paymegpt.com/mcp-connectors-ai-video-models/" class="card">
+            <div class="thumb" style="background-image:url('https://paymegpt.com/objects/quick-uploads/2/34bf8dc01b14b7a9.png')" role="img" aria-label="MCP Connectors & AI Video Models cover image"></div>
+            <div class="body">
+              <span class="tag">Platform</span>
+              <h3>MCP Connectors &amp; AI Video Models: The Future of Automation</h3>
+              <p>The tools that unlock seamless integrations are here. Model Context Protocol connectors and next-generation video models are transforming how agents connect to your workflows.</p>
+              <div class="meta">
+                <span>Aug 7, 2026</span>
+              </div>
+            </div>
+          </a>
+          <button class="share-btn share-float" data-share="post" data-url="https://blog.paymegpt.com/mcp-connectors-ai-video-models/" data-title="MCP Connectors & AI Video Models: The Future of Automation" aria-label="Share this post" title="Share this post">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
+          </button>
+        </div>
         <div class="post-wrap">
           <a href="https://blog.paymegpt.com/saas-public-enemy-number-one" class="card">
             <div class="thumb" style="background-image:url('https://paymegpt.com/objects/quick-uploads/2/af5b311920610dd7.jpg')" role="img" aria-label="PayMeGPT Discord general channel: our Discord, our community, our win"></div>
