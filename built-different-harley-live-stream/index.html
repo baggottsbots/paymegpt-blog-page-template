@@ -25,7 +25,7 @@
   "description": "Cinematic motorcycle content created entirely with PayMeGPT tools on a live YouTube stream.",
   "image": "https://paymegpt.com/objects/generated-images/2/1785729037674-b031123b9567eb24.png",
   "datePublished": "2026-08-03",
-  "dateModified": "2026-08-03",
+  "dateModified": "2026-08-07",
   "author": { "@type": "Person", "name": "Ryan Baggott" },
   "publisher": {
     "@type": "Organization",
@@ -60,14 +60,18 @@
 <script data-lp-token-hydrate>
 (function(){try{
   var slug="paymegpt-blog-template-copy-1785730166107";
+  var SITEK="";
   var SK='lp_access_'+slug;
   var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
   var u=new URL(location.href);var found=null;var changed=false;
-  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{localStorage.setItem(map[p]+slug,v);}catch(e){}u.searchParams.delete(p);changed=true;}});
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}u.searchParams.delete(p);changed=true;}});
   if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
-  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
   if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
-  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);}catch(e){return null;}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
   function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
   if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
   if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
@@ -391,15 +395,8 @@
 
   <article>
     <div class="read">
-      <h2>From prompt to finished video, live on stream</h2>
-      <p>This is what happens when you combine the full PayMeGPT toolkit with creative ambition: one livestream, multiple AI image and video models, real-time audio generation, and a finished cinematic video with branded outro.</p>
-      <p>Watch the main video below. This was built entirely through PayMeGPT's agentic tools while streaming to YouTube.</p>
-      <figure class="video-figure">
-        <div class="embed">
-          <iframe src="https://www.youtube.com/embed/0Sbutznpu6Y" title="Built Different: The Harley Live Stream" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <figcaption>Full livestream: Building the Harley video from concept to final render in real time.</figcaption>
-      </figure>
+      <h2>From prompt to finished video</h2>
+      <p>This is what happens when you combine the full PayMeGPT toolkit with creative ambition: one livestream, multiple AI image and video models, real-time audio generation, and a finished cinematic video with branded outro. Built entirely through PayMeGPT's agentic tools while streaming to YouTube.</p>
       <h2>The workflow that made this possible</h2>
       <p>Step one was image generation. We used Gemini with the PayMeGPT logo as a reference to create a cinematic Harley motorcycle image that felt on-brand. Step two was video: Grok video generation took that image and created a 15-second cinematic clip with native music. Step three was audio: ElevenLabs delivered a cloned voice reading a Kevin Gates style hook, then we overlaid it onto the video at 0.4x volume to sit under the music.</p>
       <p>The final video needed an end card. We generated a fresh PayMeGPT logo card using the same tools, then merged everything together: cinematic Harley footage plus Kevin Gates voiceover plus logo outro equals one finished piece of social content.</p>
@@ -425,32 +422,13 @@
     </div>
   </article>
 
-  <div class="skill-section" data-section="skill-access">
-    <div class="skill-box">
-      <h2>Get the Complete Workflow Skill</h2>
-      <p>Get instant access to the step-by-step Creative Content to Blog & Social skill. Everything you need to build branded content, publish blog articles, and post to social media with automated lead capture.</p>
-      <form class="skill-form" id="skillForm">
-        <input type="text" id="skillName" placeholder="Your name" required />
-        <input type="email" id="skillEmail" placeholder="Your email" required />
-        <button type="submit" id="skillBtn">Unlock Access</button>
-        <div class="loading" id="skillLoading">Sending...</div>
-      </form>
-      <div class="file-reveal" id="fileReveal">
-        <h3>Skill Unlocked</h3>
-        <p>Your workflow guide is ready. Download the complete skill file below.</p>
-        <div class="file-reveal-content" id="fileContent"></div>
-        <a href="#" class="file-download-btn" id="downloadBtn" download="creative-content-to-blog-and-social.md">Download Skill File</a>
-      </div>
-    </div>
-  </div>
-
   <div class="wrap" data-section="cta">
     <div class="offer">
       <span class="eyebrow">Build like this</span>
       <h2>The PayMeGPT Content Toolkit</h2>
       <p>Generate images, videos, audio, and content all in one place. Build autonomous agents that handle end-to-end creative workflows. Ship faster.</p>
       <a class="btn" href="https://paymegpt.com" target="_blank" rel="noopener">Start building</a>
-      <a class="btn btn-ghost" href="https://youtu.be/0Sbutznpu6Y" target="_blank" rel="noopener">Watch the full stream</a>
+      <a class="btn btn-ghost" href="https://paymegpt.com" target="_blank" rel="noopener">See all features</a>
     </div>
   </div>
 
@@ -474,67 +452,7 @@
 
 <div class="share-toast" id="shareToast">Link copied</div>
 
-<script>
-  const skillFileUrl = 'https://paymegpt.com/objects/quick-uploads/2/30f604c0b5d3e33a.md';
-  const webhookUrl = 'https://paymegpt.com/api/webhooks/flow/4697/2e7d676cbb7c7f2fd7c119c80f3235d196a151413c1e3f4ff1c4a877c2c2c59e';
 
-  document.getElementById('skillForm').addEventListener('submit', async function(e){
-    e.preventDefault();
-    const name = document.getElementById('skillName').value.trim();
-    const email = document.getElementById('skillEmail').value.trim();
-    const btn = document.getElementById('skillBtn');
-    const loading = document.getElementById('skillLoading');
-    const fileReveal = document.getElementById('fileReveal');
-    
-    if(!name || !email) return;
-    btn.style.display = 'none';
-    loading.style.display = 'block';
-    
-    try {
-      const fileResponse = await fetch(skillFileUrl);
-      const fileContent = await fileResponse.text();
-      
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contactName: name, contactEmail: email, data: { name, email } })
-      });
-      
-      setTimeout(function(){
-        loading.style.display = 'none';
-        fileReveal.classList.add('show');
-        const preview = fileContent.substring(0, 2000) + '\n\n[...see full file when downloaded...]';
-        const fileContentEl = document.getElementById('fileContent');
-        fileContentEl.innerHTML = '<pre>' + preview.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
-        const blob = new Blob([fileContent], { type: 'text/markdown' });
-        const url = URL.createObjectURL(blob);
-        document.getElementById('downloadBtn').href = url;
-        fileReveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 800);
-    } catch(err){
-      console.error('Error:', err);
-      loading.style.display = 'none';
-      btn.style.display = 'flex';
-      alert('Error accessing the skill. Please try again.');
-    }
-  });
-
-  (function(){
-    var url = (document.querySelector('link[rel=canonical]') || {}).href || location.href.split('#')[0].split('?')[0];
-    var title = (document.querySelector('meta[property="og:title"]') || {}).content || document.title;
-    var toastEl = document.getElementById('shareToast');
-    var toastTimer;
-    function toast(msg){ toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2000); }
-    function copy(u){ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(u).then(function(){ toast('Link copied'); }); } }
-    var eu = encodeURIComponent(url), et = encodeURIComponent(title);
-    document.querySelectorAll('[data-share]').forEach(function(el){
-      var kind = el.getAttribute('data-share');
-      if(kind === 'x'){ el.href = 'https://twitter.com/intent/tweet?text=' + et + '&url=' + eu; }
-      else if(kind === 'facebook'){ el.href = 'https://www.facebook.com/sharer/sharer.php?u=' + eu; }
-      else if(kind === 'linkedin'){ el.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + eu; }
-      else if(kind === 'copy'){ el.addEventListener('click', function(e){ e.preventDefault(); copy(url); }); }
-    });
-  })();
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
