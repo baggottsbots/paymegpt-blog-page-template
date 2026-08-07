@@ -26,11 +26,6 @@
   .nav-links{display:flex;align-items:center;gap:24px}
   .nav-links a{color:var(--muted);font-weight:500;font-size:.95rem;transition:color .15s}
   .nav-links a:hover{color:var(--text)}
-  .hamburger{display:none;background:transparent;border:1px solid var(--border-strong);border-radius:10px;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
-  .hamburger svg{width:22px;height:22px;color:var(--text)}
-  .mobile-menu{display:none;border-top:1px solid var(--border);background:var(--surface-2)}
-  .mobile-menu.open{display:block}
-  .mobile-menu a{display:block;padding:14px 24px;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border)}
 
   .article-head{padding:52px 24px 30px;text-align:center}
   .back{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:22px}
@@ -41,7 +36,7 @@
   .byline span:not(.av):not(.dot){white-space:nowrap}
   .av{width:40px;height:40px;border-radius:50%;background-image:url('https://paymegpt.com/objects/quick-uploads/2/6a02a4d570348ea0.jpg');background-size:cover;background-position:center;flex:0 0 auto}
   .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.6;flex:0 0 auto}
-  .cover{max-width:960px;margin:34px auto 0;height:min(46vw,420px);border-radius:22px;border:1px solid var(--border);background-image:url('https://paymegpt.com/objects/quick-uploads/2/af5b311920610dd7.jpg');background-size:cover;background-position:center}
+  .cover{max-width:960px;margin:34px auto 0;height:min(46vw,420px);border-radius:22px;border:1px solid var(--border);background-image:url('https://paymegpt.com/objects/quick-uploads/2/34bf8dc01b14b7a9.png');background-size:cover;background-position:center}
 
   article{padding:44px 0 20px}
   article p{color:#cdd4df;font-size:1.09rem;margin:0 0 24px}
@@ -55,6 +50,16 @@
   .callout h3{margin-top:0}
   .tag{font-family:'Poppins';font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
   .divider{border:0;border-top:1px solid var(--border);margin:44px 0}
+
+  /* ===== SHARE ===== */
+  .share{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .share-label{font-family:'Poppins';font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+  .share-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;background:var(--surface);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:.15s;padding:0}
+  .share-btn:hover{color:var(--accent-ink);background:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+  .share-btn svg{width:17px;height:17px}
+  .share-btn.hidden{display:none}
+  .share-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(12px);background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:11px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:300}
+  .share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
   .msg{margin:26px 0;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 14px 14px 0;padding:18px 22px}
   .msg .who{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
