@@ -67,7 +67,7 @@
   var u=new URL(location.href);var found=null;var changed=false;
   var PINP=true;
   if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
-  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}u.searchParams.delete(p);changed=true;}});
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}if(p==='pin_access_token'){try{sessionStorage.setItem('lp_fresh_'+slug,'1');}catch(e){}}u.searchParams.delete(p);changed=true;}});
   if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
   else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
   if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
@@ -439,7 +439,8 @@
         <div>
           <span class="author-label">Written by</span>
           <h4>Ryan Baggott</h4>
-          <p>Building tools that help people ship and monetize AI agents without writing code. Building fast, thinking faster, always shipping.</p>
+          <p style="margin:0;color:var(--muted);font-size:.88rem;font-weight:600;line-height:1.35;">Founder, PayMeGPT</p>
+          <p>Building the platform that lets anyone turn AI into products, systems, and revenue.</p>
         </div>
       </div>
     </div>
