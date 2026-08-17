@@ -61,7 +61,7 @@
   .divider{border:0;border-top:1px solid var(--border);margin:44px 0}
 
   .author{display:flex;gap:18px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px}
-  .author .av{width:56px;height:56px}
+  .author .av{width:76px;height:76px}
   .author h4{font-family:'Poppins';font-weight:700;font-size:1.05rem;margin-bottom:4px}
   .author p{color:var(--muted);font-size:.95rem;margin:0}
 
@@ -90,4 +90,5 @@
     .brand{font-size:1.08rem}
     .foot{grid-template-columns:1fr}
     .author{flex-direction:column;text-align:center}
+    .author .av{width:64px;height:64px}
   }
