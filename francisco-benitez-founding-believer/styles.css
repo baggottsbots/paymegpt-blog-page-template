@@ -85,7 +85,7 @@
   .btn-ghost:hover{background:rgba(255,255,255,.05)}
 
   .author{display:flex;gap:18px;align-items:flex-start;border-top:1px solid var(--border);padding:30px 0 6px;margin-top:34px}
-  .author .av{width:56px;height:56px}
+  .author .av{width:76px;height:76px}
   .author-label{display:block;font-family:'Poppins';font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.85;margin-bottom:6px}
   .author h4{font-family:'Poppins';font-weight:700;font-size:1.05rem;margin-bottom:4px}
   .author p{color:var(--muted);font-size:.95rem;margin:0;max-width:56ch}
@@ -100,7 +100,7 @@
     .offer{padding:32px 24px;border-radius:18px}
     .btn-ghost{margin-left:0;margin-top:10px}
     .author{gap:14px;padding-top:26px}
-    .author .av{width:48px;height:48px}
+    .author .av{width:64px;height:64px}
   }
   @media (max-width:560px){
     .wrap{padding:0 16px}
