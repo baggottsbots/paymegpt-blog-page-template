@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.paymegpt.com/one-prompt-to-published/</loc>
+    <lastmod>2026-08-17T00:48:22.060Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://blog.paymegpt.com/form-flow-pipeline/</loc>
     <lastmod>2026-08-17T00:30:26.960Z</lastmod>
     <changefreq>weekly</changefreq>
