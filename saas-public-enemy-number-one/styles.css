@@ -36,7 +36,7 @@
   .byline span:not(.av):not(.dot){white-space:nowrap}
   .av{width:40px;height:40px;border-radius:50%;background-image:url('https://paymegpt.com/objects/quick-uploads/2/6a02a4d570348ea0.jpg');background-size:cover;background-position:center;flex:0 0 auto}
   .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.6;flex:0 0 auto}
-  .cover{max-width:960px;margin:34px auto 0;height:min(46vw,420px);border-radius:22px;border:1px solid var(--border);background-image:url('https://paymegpt.com/objects/quick-uploads/2/34bf8dc01b14b7a9.png');background-size:cover;background-position:center}
+  .cover{max-width:960px;margin:34px auto 0;height:min(46vw,420px);border-radius:22px;border:1px solid var(--border);background-image:url('https://paymegpt.com/objects/quick-uploads/2/af5b311920610dd7.jpg');background-size:cover;background-position:center}
 
   article{padding:44px 0 20px}
   article p{color:#cdd4df;font-size:1.09rem;margin:0 0 24px}
@@ -82,7 +82,7 @@
   .btn-ghost:hover{background:rgba(255,255,255,.05)}
 
   .author{display:flex;gap:18px;align-items:flex-start;border-top:1px solid var(--border);padding:30px 0 6px;margin-top:34px}
-  .author .av{width:56px;height:56px}
+  .author .av{width:76px;height:76px}
   .author-label{display:block;font-family:'Poppins';font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.85;margin-bottom:6px}
   .author h4{font-family:'Poppins';font-weight:700;font-size:1.05rem;margin-bottom:4px}
   .author p{color:var(--muted);font-size:.95rem;margin:0;max-width:56ch}
@@ -97,7 +97,7 @@
     .offer{padding:32px 24px;border-radius:18px}
     .btn-ghost{margin-left:0;margin-top:10px}
     .author{gap:14px;padding-top:26px}
-    .author .av{width:48px;height:48px}
+    .author .av{width:64px;height:64px}
   }
   @media (max-width:560px){
     .wrap{padding:0 16px}
